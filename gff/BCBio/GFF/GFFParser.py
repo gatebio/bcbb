@@ -187,7 +187,7 @@ def _gff_line_map(line, params):
                     gff_parts.append(p)
             gff_info = dict()
             # collect all of the base qualifiers for this item
-            if len(parts) > 8:
+            if len(parts) > 8 and gff_parts[8] is not None:
                 quals, is_gff2 = _split_keyvals(gff_parts[8])
             else:
                 quals, is_gff2 = collections.defaultdict(list), False
